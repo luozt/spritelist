@@ -1,6 +1,6 @@
 {
   "name": "spritelist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "read dir images width and height and list them for css sprites!",
   "main": "index.js",
   "bin": {
@@ -11,7 +11,12 @@
     "minimist": "^1.2.0"
   },
   "keywords": [
-    "sprites", "less", "css", "sprite", "icon", "spritelist"
+    "sprites",
+    "less",
+    "css",
+    "sprite",
+    "icon",
+    "spritelist"
   ],
   "repository": {
     "type": "git",
