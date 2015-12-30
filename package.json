@@ -10,6 +10,13 @@
     "image-size": "^0.4.0",
     "minimist": "^1.2.0"
   },
+  "keywords": [
+    "sprites", "less", "css", "sprite", "icon", "spritelist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luozt/spritelist.git"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

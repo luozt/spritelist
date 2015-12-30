@@ -1,5 +1,6 @@
 #!/usr/bin/env node
- //插件类
+
+//插件类
 var fs = require("fs"),
   path = require("path"),
   http = require("http"),
