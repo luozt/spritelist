@@ -14,11 +14,22 @@ var reImagePath = /^.+\.(jpg|jpeg|png|bmp|tiff|webp|svg)$/i;
 
 // 配置
 var makeItem = function(basename, ext, width, height) {
-  return [
-    ".sprite-", basename, "{",
-    ".sprite-item(\"", basename, "\",\"", ext, "\",", width, ",", height, ");",
-    "}"
-  ].join("");
+  var isCss = argv["c"] || argv["css"];
+  if(!isCss){
+    return [
+      ".sprite-", basename, "{",
+      ".sprite-item(\"", basename, "\",\"", ext, "\",", width, ",", height, ");",
+      "}"
+    ].join("");
+  }else{
+    return [
+      ".sprite-", basename, "{",
+      "width:", width, "px; ",
+      "height:",height,"px; ",
+      "background-image:url(",basename,ext,");",
+      "}"
+    ].join("");
+  }
 };
 
 //定义输出结果

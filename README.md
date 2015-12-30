@@ -22,10 +22,11 @@ spritelist -p
 
 加上`-p`参数，则不生成文件，直接打印在console中；
 加上`-f`参数，则不打印，而是生成sprites less样式的sprites.txt文件；
+加上`-c`或`--css`参数，则生成的是css属性的样式表，需开发者自定义图片路径；
 
 ##应用于开发
 
-生成的spritelist样式表样例为：
+默认生成的spritelist样式表样例为：
 
 ```less
 .sprite-1{.sprite-item("1",".jpg",454,810);}
