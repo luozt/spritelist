@@ -135,6 +135,12 @@ fs.readdir(workpath, function(err, files) {
       fullPath = workpath + "/" + filename,
       size;
 
+    // 剔除basename前下划线开头的字符
+    var re = /^_*([^_].+)$/i;
+    if(re.test(basename)){
+      basename = RegExp.$1;
+    }
+
     if (reImagePath.test(fullPath)) {
       fs.stat(fullPath, function(err, stat) {
         if (err) {
