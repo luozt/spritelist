@@ -1,6 +1,6 @@
 {
   "name": "spritelist",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "read dir images width and height and list them for css sprites!",
   "main": "index.js",
   "bin": {
