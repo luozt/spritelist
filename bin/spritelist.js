@@ -13,12 +13,22 @@ var workpath, arrRes = [];
 // 工具类
 var reImagePath = /^.+\.(jpg|jpeg|png|bmp|tiff|webp|svg)$/i;
 
+var reUnderscore = /^_*([^_].+)$/i;
+
+// 剔除文件名开头的下划线
+var formateSpriteName = function(basename){
+  if(reUnderscore.test(basename)){
+    basename = RegExp.$1;
+  }
+  return basename;
+}
+
 // 配置
 var makeItem = function(basename, ext, width, height) {
   var isCss = argv["c"] || argv["css"];
   if(!isCss){
     return [
-      ".sprite-", basename, "{",
+      ".sprite-", formateSpriteName(basename), "{",
       ".sprite-item(\"", basename, "\",\"", ext, "\",", width, ",", height, ");",
       "}"
     ].join("");
@@ -134,12 +144,6 @@ fs.readdir(workpath, function(err, files) {
       basename = path.basename(filename, ext),
       fullPath = workpath + "/" + filename,
       size;
-
-    // 剔除basename前下划线开头的字符
-    var re = /^_*([^_].+)$/i;
-    if(re.test(basename)){
-      basename = RegExp.$1;
-    }
 
     if (reImagePath.test(fullPath)) {
       fs.stat(fullPath, function(err, stat) {

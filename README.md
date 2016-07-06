@@ -2,6 +2,10 @@
 
 read dir images width and height and list them for css sprites!
 
+## install
+
+必须安装在全局：`npm i -g spritelist`
+
 ##usage
 
 ```shell

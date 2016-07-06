@@ -1,1 +1,1 @@
-var sprites = module.exports = require("image-size");
+module.exports = {};
