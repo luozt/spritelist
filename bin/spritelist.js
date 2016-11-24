@@ -26,15 +26,16 @@ var formateSpriteName = function(basename){
 // 配置
 var makeItem = function(basename, ext, width, height) {
   var isCss = argv["c"] || argv["css"];
+  var n = argv['n'] || '';
   if(!isCss){
     return [
-      ".sprite-", formateSpriteName(basename), "{",
-      ".sprite-item(\"", basename, "\",\"", ext, "\",", width, ",", height, ");",
+      ".sprite"+n+"-", formateSpriteName(basename), "{",
+      ".sprite"+n+"-item(\"", basename, "\",\"", ext, "\",", width, ",", height, ");",
       "}"
     ].join("");
   }else{
     return [
-      ".sprite-", basename, "{",
+      ".sprite"+n+"-", basename, "{",
       "width:", width, "px; ",
       "height:",height,"px; ",
       "background-image:url(",basename,ext,");",
